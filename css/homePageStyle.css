@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Start Header Section */
+
+header {}
+
+/* -Start Navigation Section- */
+
+nav {
+    height: 4rem;
+}
+
+/* --Start Container Section-- */
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 4rem;
+    padding: 96px;
+}
+
+/* --End Container Section-- */
+
+/* -End Navigation Section- */
+
+/* End Header Section */
