@@ -6,24 +6,50 @@
     <meta name="description" content="Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online." />
     <meta name="author" content="Hamza ZAOUYA" />
     <title>Internet for people, not profit — Mozilla</title>
+    <link rel="icon" href="img/hp/favicon.png" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/homePageStyle.css" />
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-   <header>
-       <nav>
-           <div class="container">
-               <div class="nav-content">
-                   <div class="logo"></div>
-                   <div class="nav-links"></div>
-                    <div class="download-btn"></div>
-               </div>
-           </div>
-       </nav>
-   </header>
-    
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <div class="logo-content">
+                            <img src="img/hp/logo.svg" alt="Mozilla Home Page Logo" />
+                        </div>
+                        <div class="hamburger-icon" id="hamburger">
+                            <div class="menu">
+                                <i class="fas fa-bars"></i>
+                                <i class="fas fa-times" id="times"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-links" id="links">
+                        <div class="nav-links-content">
+                            <ul>
+                                <li><a href="#" class="nav-link">firefox browsers</a><i class="fas fa-chevron-down"></i></li>
+                                <li><a href="#" class="nav-link">products</a><i class="fas fa-chevron-down"></i></li>
+                                <li><a href="#" class="nav-link">who we are</a><i class="fas fa-chevron-down"></i></li>
+                                <li><a href="#" class="nav-link">innovation</a><i class="fas fa-chevron-down"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="download-btn " id="download">
+                        <div class="download-container">
+                            <a href="https://www.mozilla.org/en-US/firefox/download/thanks/" id="onload">download firefox</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <script src="js/homePagemain.js"></script>
-</body>
-</html>
+</body></html>

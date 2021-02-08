@@ -17,7 +17,10 @@ header {}
 /* -Start Navigation Section- */
 
 nav {
-    height: 4rem;
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgb(29 17 51 / 4%), 0 0 3px 2px rgb(9 32 77 / 12%), 0 0 2px -3px rgb(29 17 51 / 12%);
+    overflow: hidden;
+    min-height: 4rem;
 }
 
 /* --Start Container Section-- */
@@ -25,12 +28,327 @@ nav {
 .container {
     max-width: 1500px;
     margin: 0 auto;
-    height: 4rem;
-    padding: 96px;
+    padding: 0 96px;
 }
 
+/* ---Start Navigation Content Section--- */
+
+.nav-content {
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 130px 1fr 190px;
+    padding-top: 16px;
+}
+
+.logo,
+.nav-links,
+.download {
+    height: 2rem;
+}
+
+/* ----Start Logo Section----*/
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo .logo-content {
+    height: 2rem;
+    width: 112px;
+}
+
+.logo .logo-content img {
+    width: 100%;
+}
+
+.logo .hamburger-icon {
+    display: none;
+}
+
+/* ----End Logo Section----*/
+/* ----Start navigation Links----*/
+
+.nav-links {}
+
+.nav-links-content > ul {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-links-content .nav-link {
+    display: block;
+    line-height: 2rem;
+    height: 2rem;
+    margin: 0 16px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    transition: .3s
+}
+
+.nav-links-content .nav-link:hover {
+    border-bottom: 3px solid rgba(0, 0, 0, 1);
+}
+
+.fa-chevron-down {
+    display: none;
+}
+
+/* ----Start navigation Links----*/
+/* ----Start Download Button Section----*/
+
+.download-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.download-btn .download-container a {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 170px;
+    border: 2px solid #0060df;
+    border-radius: 6px;
+    color: #0060df;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: .9rem;
+    transition: .2s;
+}
+
+.download-btn .download-container a.onload {
+    animation: onload .9s;
+}
+
+.download-btn .download-container a:hover {
+    color: #FFF;
+    background-color: #0060df;
+
+}
+
+@keyframes onload {
+
+    0%,
+    30%,
+    60%,
+    90%,
+    100% {
+        transform: translateY(0);
+    }
+
+    15% {
+        transform: translateY(-10px);
+        animation-timing-function: ease-out;
+    }
+
+    45% {
+        transform: translateY(-5px);
+        animation-timing-function: ease-out;
+    }
+
+    75% {
+        transform: translateY(-1px);
+        animation-timing-function: ease-out;
+    }
+}
+
+/* ----End Download Butoon Section----*/
+/* ---End Navigation Content Section--- */
 /* --End Container Section-- */
-
 /* -End Navigation Section- */
-
 /* End Header Section */
+
+/* ===================================== RESPONSIVE 1028px =============================== */
+
+@media(max-width: 1024px) {
+
+    /* Start Navigation Bar Section */
+    .container {
+        padding: 0 64px;
+    }
+
+    .nav-content {
+        grid-template-columns: 120px 1fr 175px;
+    }
+
+    .nav-links-content .nav-link {
+        margin: 0 8px;
+    }
+
+    /* End Navigation Bar Section */
+}
+
+/* ===================================== RESPONSIVE 850px =============================== */
+
+@media(max-width: 875px) {
+    .nav-content {
+        grid-template-areas:
+            'logo download download'
+            'links links links';
+        padding: 0;
+    }
+
+    .logo {
+        grid-area: logo;
+        height: 4rem;
+    }
+
+    .nav-links {
+        grid-area: links;
+        height: 3rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .nav-links-content > ul > li:first-of-type > .nav-link {
+        margin-left: 0;
+    }
+
+    .download-btn {
+        grid-area: download;
+        height: 4rem;
+    }
+}
+
+/* ===================================== RESPONSIVE 768px =============================== */
+
+@media(max-width: 768px) {
+
+    /*Start Header Section*/
+    /*-Start Navbar Section-*/
+    .nav-content {
+        grid-template-areas:
+            'logo logo logo'
+            'download download download'
+            'links links links';
+    }
+    
+    .container {
+        padding: 0 24px;
+    }
+
+    /*--Start Logo Section--*/
+    .logo {
+        grid-area: logo;
+        height: 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /*---Start Hamburger Icon Section---*/
+    .logo .hamburger-icon {
+        display: block;
+        position: relative;
+        height: 32px;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer
+    }
+
+    .logo .hamburger-icon .menu .fas {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        display: block;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 32px;
+        background-color: #FFF;
+    }
+
+    .logo .hamburger-icon .menu .fas:last-of-type {
+        display: none;
+    }
+
+    .logo .hamburger-icon .menu .fas.times {
+        display: block;
+    }
+
+    /*---End hamburger icon seciton---*/
+    /*--End Logo Section--*/
+    /*--Start Nav Links Section--*/
+    /*---Start Nav Links Content---*/
+    .nav-links {
+        grid-area: links;
+        overflow: hidden;
+        padding-top: 2rem;
+        display: none;
+        height: 100%;
+    }
+
+    .nav-links-content {
+        width: 100%;
+    }
+
+    .nav-links-content > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links-content > ul > li {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #DDD;
+        cursor: pointer;
+    }
+    
+    .nav-links-content .nav-link{
+        margin: 0;
+    }
+
+    .nav-links-content .nav-link:hover {
+        border-bottom: 0px solid rgba(0, 0, 0, 0);
+    }
+
+    .fa-chevron-down {
+        display: block;
+        transition: .3s;
+        color: #ccc;
+    }
+    
+    .nav-links-content > ul > li:hover > .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    /*---End Nav Links Content---*/
+    /*--End Nav links Section--*/
+    /*--Start Download section--*/
+    .download-btn {
+        height: 3rem;
+        grid-area: download;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    /*--Start Download section--*/
+    /*-End NavBar Section*/
+
+}
