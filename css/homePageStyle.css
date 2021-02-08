@@ -19,7 +19,6 @@ header {}
 nav {
     background: #fff;
     box-shadow: 0 0 1px 1px rgb(29 17 51 / 4%), 0 0 3px 2px rgb(9 32 77 / 12%), 0 0 2px -3px rgb(29 17 51 / 12%);
-    overflow: hidden;
     min-height: 4rem;
 }
 
@@ -81,6 +80,10 @@ nav {
     align-items: center;
 }
 
+.nav-links-content > ul > li {
+    position: relative;
+}
+
 .nav-links-content .nav-link {
     display: block;
     line-height: 2rem;
@@ -100,6 +103,114 @@ nav {
 
 .fa-chevron-down {
     display: none;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 540px;
+    padding-top: 1.5rem;
+}
+
+.nav-links-content > ul > li:last-of-type .dropdown {
+    left: -430px;
+    width: 530px;
+}
+
+.nav-links-content > ul > li:hover > .dropdown {
+    display: block;
+}
+
+.dropdown-contents {
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, .3);
+    padding: 1rem;
+    display: grid;
+    grid-template-areas:
+        'one two'
+        'three three';
+}
+
+.dropdown-contents-one,
+.dropdown-contents-two {
+    height: 90%;
+    width: 100%;
+    overflow: hidde;
+}
+
+.dropdown-contents-one {
+    grid-area: one;
+}
+
+.dropdown-contents-two {
+    grid-area: two;
+}
+
+.dropdown-contents-three {
+    padding: 10px 0;
+    grid-area: three;
+    text-align: center;
+}
+
+.dropdown-contents-three a {
+    height: 100%;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.dropdown-contents-three a:hover {
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+}
+
+.dropdown-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-decoration: none;
+    color: #000;
+    padding: 1rem .5rem;
+}
+
+.dropdown-content:hover {
+    background-color: #f8f8f9;
+}
+
+.dropdown-content-img {
+    width: 20%;
+    padding-right: 20px;
+}
+
+.dropdown-content-img img {
+    width: 35px;
+}
+
+.dropdown-content-img i {
+    font-size: 1.7rem;
+}
+
+.dropdwn-content-description h3 {
+    font-size: .98rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    display: inline-block;
+}
+
+.dropdown-content:hover .dropdwn-content-description h3 {
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+}
+
+.dropdwn-content-description p {
+    font-size: .75rem;
+    color: #333;
+    line-height: 1.5
 }
 
 /* ----Start navigation Links----*/
@@ -187,6 +298,56 @@ nav {
         margin: 0 8px;
     }
 
+    /* Start Dropdown Section */
+
+    .dropdown {
+        width: 260px;
+    }
+    
+    .nav-links-content > ul > li:last-of-type .dropdown {
+        left: -170px;
+        width: 260px;
+    }
+
+    .dropdown-contents {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown-content {
+        padding: .6rem .5rem;
+        align-items: center;
+        justify-content: flex-start
+    }
+
+    .dropdwn-content-description p {
+        display: none;
+    }
+
+    .dropdown-content-img {
+        width: 20%;
+    }
+
+    .dropdown-content-img img {
+        width: 25px;
+    }
+
+    .dropdown-content-img i {
+        font-size: 1.2rem;
+    }
+
+    .dropdown-contents-three a {
+        height: 100%;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    /* End Dropdown Section */
+
     /* End Navigation Bar Section */
 }
 
@@ -221,6 +382,13 @@ nav {
         grid-area: download;
         height: 4rem;
     }
+
+    /* Start Dropdown Section */
+    .dropdown {
+        padding-top: 1rem;
+    }
+
+    /* End Dropdown Section */
 }
 
 /* ===================================== RESPONSIVE 768px =============================== */
@@ -235,7 +403,7 @@ nav {
             'download download download'
             'links links links';
     }
-    
+
     .container {
         padding: 0 24px;
     }
@@ -306,15 +474,18 @@ nav {
 
     .nav-links-content > ul > li {
         width: 100%;
+        border-top: 1px solid #DDD;
+        cursor: pointer;
+    }
+
+    .nav-links-content > ul > li > .nav-link-content {
         height: 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-top: 1px solid #DDD;
-        cursor: pointer;
     }
-    
-    .nav-links-content .nav-link{
+
+    .nav-links-content .nav-link {
         margin: 0;
     }
 
@@ -327,12 +498,51 @@ nav {
         transition: .3s;
         color: #ccc;
     }
-    
-    .nav-links-content > ul > li:hover > .fa-chevron-down {
+
+    .nav-links-content > ul > li:hover .fa-chevron-down {
         transform: rotate(180deg);
     }
 
     /*---End Nav Links Content---*/
+    /*----Start Dropdown Section----*/
+    .dropdown {
+        position: relative;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-links-content > ul > li:last-of-type .dropdown {
+        left: 0;
+        width: 100%;
+    }
+
+    .dropdown-contents {
+        box-shadow: none;
+        display: grid;
+        grid-area:
+            'one two'
+            'three three';
+    }
+
+    .dropdown-content {
+        align-items: flex-start;
+    }
+
+    .dropdown-contents-three {
+        margin-top: 10px;
+        padding: 15px 0;
+        border-top: 1px solid #DDD;
+    }
+
+    .dropdown-content-img {
+        width: 40px
+    }
+
+    .dropdwn-content-description p {
+        display: block;
+    }
+
+    /**----End Dropdown Section----*/
     /*--End Nav links Section--*/
     /*--Start Download section--*/
     .download-btn {
@@ -350,5 +560,24 @@ nav {
 
     /*--Start Download section--*/
     /*-End NavBar Section*/
+}
 
+/* ===================================== RESPONSIVE 768px =============================== */
+
+@media(max-width: 479px) {
+    .dropdown-contents {
+        display: flex;
+    }
+
+    .dropdown-content {
+        padding: 16px 0;
+    }
+
+    .dropdwn-content-description p {
+        display: none;
+    }
+
+    .dropdwn-content-description h3 {
+        margin: 0;
+    }
 }
