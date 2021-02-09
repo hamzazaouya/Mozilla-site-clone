@@ -112,6 +112,7 @@ nav {
     top: 100%;
     width: 540px;
     padding-top: 1.5rem;
+    z-index: 100;
 }
 
 .nav-links-content > ul > li:last-of-type .dropdown {
@@ -279,13 +280,134 @@ nav {
 /* ---End Navigation Content Section--- */
 /* --End Container Section-- */
 /* -End Navigation Section- */
+
+/* -Start Promotion Banner- */
+.promo-banner {
+    background-image: linear-gradient(90deg, #fca134, #e1294f);
+    position: relative;
+}
+
+.promo-banner .times {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    padding-right: 30px;
+    z-index: 1;
+}
+
+.promo-banner .times .fa-times{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.promo-banner-content {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.promo-banner-content div {
+    display: flex;
+    align-items: center;
+}
+
+.promo-banner-content div h4 {
+    font-size: 1.4rem;
+    margin-right: 30px;
+}
+
+.promo-banner-content div a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 22px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.promo-banner-content div a:hover {
+    background-color: #FFF;
+}
+
+/* -End Promotion Banner- */
+
+/*-Start Header Content Section-*/
+.privacy-hero {
+    background-color: #20123a;
+    overflow: hidden;
+}
+
+.privacy-hero-container {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.privacy-hero-container div {
+    height: 100%;
+    width: 50%;
+}
+
+.privacy-hero-container .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start
+}
+
+.privacy-hero-container .text h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.privacy-hero-container .text a {
+    height: 2.7rem;
+    width: 9rem;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2.7rem;
+    color: #FFF;
+    background-color: #0060df;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.privacy-hero-container .text a:hover {
+    background-color: #0250bb;
+}
+
+.privacy-hero-container .img {
+    position: relative;
+}
+
+.privacy-hero-container .img div {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    height: 450px;
+    width: 450px;
+}
+
+.privacy-hero-container .img img {
+    width: 100%;
+}
+
+/*-End Header Content Section-*/
+
 /* End Header Section */
 
 /* ===================================== RESPONSIVE 1028px =============================== */
 
 @media(max-width: 1024px) {
 
-    /* Start Navigation Bar Section */
+    /* Start Header */
+
+    /*-Start Navigation Bar Section-*/
     .container {
         padding: 0 64px;
     }
@@ -303,7 +425,7 @@ nav {
     .dropdown {
         width: 260px;
     }
-    
+
     .nav-links-content > ul > li:last-of-type .dropdown {
         left: -170px;
         width: 260px;
@@ -348,7 +470,29 @@ nav {
 
     /* End Dropdown Section */
 
-    /* End Navigation Bar Section */
+    /*-End Navigation Bar Section-*/
+    .privacy-hero-container {
+        height: 300px;
+    }
+
+    .privacy-hero-container .text {
+        justify-content: flex-start;
+    }
+
+    .privacy-hero-container .text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-hero-container .img div {
+        width: 350px;
+    }
+
+    /*-Start Header Content Section-*/
+    .
+    /*-Start Header Content Section-*/
+
+    /* End Header */
 }
 
 /* ===================================== RESPONSIVE 850px =============================== */
@@ -560,6 +704,28 @@ nav {
 
     /*--Start Download section--*/
     /*-End NavBar Section*/
+
+    /*-Start Privacy Hero Section-*/
+    .privacy-hero {}
+
+    .privacy-hero-container {
+        height: 200px;
+        align-items: center;
+    }
+
+    .privacy-hero-container .text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .privacy-hero-container .img {
+        display: none;
+    }
+
+    /* End Privacy Hero Section */
 }
 
 /* ===================================== RESPONSIVE 768px =============================== */
@@ -581,3 +747,5 @@ nav {
         margin: 0;
     }
 }
+
+/************************************** Offers ***********************************/

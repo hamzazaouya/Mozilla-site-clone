@@ -21,3 +21,12 @@ humIcon.onclick = function () {
     times.classList.toggle('times');
 };
 //End Show And Hide Download and Nav Links Sections.
+
+//Start Promotion Banner
+var closePromoBanner = document.getElementById('closePromo');
+var promoBanner = document.getElementById('promoBanner');
+closePromoBanner.onclick = function () {
+    'use strict';
+    promoBanner.style.display = "none";
+};
+//End Promotion Banner
